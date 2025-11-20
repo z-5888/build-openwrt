@@ -204,7 +204,7 @@ status "生成全局变量"
 # 下载并部署Toolchain
 if [[ $TOOLCHAIN = 'true' ]]; then
     cache_xa=$(curl -sL api.github.com/repos/$GITHUB_REPOSITORY/releases | awk -F '"' '/download_url/{print $4}' | grep $CACHE_NAME)
-    cache_xc=$(curl -sL api.github.com/repos/haiibo/toolchain-cache/releases | awk -F '"' '/download_url/{print $4}' | grep $CACHE_NAME)
+    cache_xc=$(curl -sL api.github.com/repos/z-5888/toolchain-cache/releases | awk -F '"' '/download_url/{print $4}' | grep $CACHE_NAME)
     if [[ $cache_xa || $cache_xc ]]; then
         begin_time=$(date '+%H:%M:%S')
         [ $cache_xa ] && wget -qc -t=3 $cache_xa || wget -qc -t=3 $cache_xc
@@ -264,7 +264,7 @@ git_clone 18.06 https://github.com/kiddin9/luci-theme-edge
 git_clone 18.06 https://github.com/jerrykuku/luci-theme-argon
 git_clone 18.06 https://github.com/jerrykuku/luci-app-argon-config
 clone_dir https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom luci-theme-infinityfreedom-ng
-clone_dir https://github.com/haiibo/packages luci-theme-opentomcat
+clone_dir https://github.com/z-5888/packages luci-theme-opentomcat
 
 # 晶晨宝盒
 clone_all https://github.com/ophub/luci-app-amlogic
