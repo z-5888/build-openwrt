@@ -134,7 +134,7 @@ jobs:
 
     - name: Use Flippy Script Packaging
       if: steps.download.conclusion == 'success' && github.event.inputs.script_repo == 'flippy'
-      uses: haiibo/flippy-openwrt-actions@main
+      uses: z-5888/flippy-openwrt-actions@main
       env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/*/*/*rootfs.tar.gz
         KERNEL_REPO_URL: ${{ github.event.inputs.kernel_repo }}
